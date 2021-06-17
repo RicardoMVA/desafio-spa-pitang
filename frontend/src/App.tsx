@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import SearchNavbar from './components/SearchNavbar';
-import getRecent from "./services/flickrApi"
+import { getRecent } from "./services/flickrApi"
 
 const App : React.FC = () => {
   useEffect(() => {
