@@ -1,24 +1,47 @@
+import { useState } from 'react';
+
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup"
+import { search } from "../../services/flickrApi"
 
 const SearchNavbar : React.FC = () => {
+  const [searchText, setSearchText] = useState("");
+
+  const handleChangeSearch = (input: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setSearchText(input.currentTarget.value);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const pesquisa = await search(searchText)
+
+    if (pesquisa.stat === "fail") {
+      console.log("pesquisa falhou")
+    } else {
+      console.log(pesquisa)
+    }
+  }
+
   return (
     <div className="SearchNavbar">
       <Navbar expand="lg" variant="dark" bg="dark">
         <Container>
           <Navbar.Brand href="#">Flickr</Navbar.Brand>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button type="submit">Pesquisar</Button>
+          <Form className="d-flex" onSubmit={handleSubmit}>
+            <InputGroup>
+              <FormControl
+                placeholder="Pesquisar fotos"
+                aria-label="Pesquisar"
+                onChange={handleChangeSearch}
+              />
+              <Button variant="secondary">Pesquisar</Button>
+            </InputGroup>
           </Form>
-          <Nav className="mr-auto">
-            <Nav.Link href="#link1">Link 1</Nav.Link>
-            <Nav.Link href="#link2">Link 2</Nav.Link>
-          </Nav>
         </Container>
       </Navbar>
     </div>
