@@ -6,7 +6,7 @@ import { IFlickrPhoto } from '../../interfaces/IFlickrPhoto'
 
 const GridFotos : React.FC<any> = (props: {fotos: IFlickrPhoto[]}) => {
   return (
-    <div className="GridFotos">
+    <div className="GridFotos" style={{ marginTop: '5rem' }}>
       <Container fluid="lg">
         <Row>
           {props.fotos && props.fotos.map((foto: IFlickrPhoto) => (

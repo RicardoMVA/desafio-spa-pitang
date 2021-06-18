@@ -22,7 +22,7 @@ const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
 
   return (
     <div className="SearchNavbar">
-      <Navbar expand="lg" variant="dark" bg="dark">
+      <Navbar expand="lg" variant="dark" bg="dark" fixed="top">
         <Container>
           <Navbar.Brand href="#">Flickr</Navbar.Brand>
           <Form className="d-flex" onSubmit={handleSubmit}>
