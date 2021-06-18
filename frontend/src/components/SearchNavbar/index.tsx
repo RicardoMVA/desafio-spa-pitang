@@ -6,25 +6,18 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup"
-import { search } from "../../services/flickrApi"
 
-const SearchNavbar : React.FC = () => {
+const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
   const [searchText, setSearchText] = useState("");
 
   const handleChangeSearch = (input: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setSearchText(input.currentTarget.value);
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const pesquisa = await search(searchText)
-
-    if (pesquisa.stat === "fail") {
-      console.log("pesquisa falhou")
-    } else {
-      console.log(pesquisa)
-    }
+    props.handleSubmit(searchText)
   }
 
   return (
@@ -39,7 +32,7 @@ const SearchNavbar : React.FC = () => {
                 aria-label="Pesquisar"
                 onChange={handleChangeSearch}
               />
-              <Button variant="secondary">Pesquisar</Button>
+              <Button type="submit" variant="secondary">Pesquisar</Button>
             </InputGroup>
           </Form>
         </Container>

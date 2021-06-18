@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import SearchNavbar from './components/SearchNavbar';
-import { getRecent } from "./services/flickrApi"
+import { getRecent, search } from "./services/flickrApi"
 
 const App : React.FC = () => {
   useEffect(() => {
@@ -10,9 +10,19 @@ const App : React.FC = () => {
     })()    
   }, []);
 
+  const runSearch = async (searchText: string) => {
+    const pesquisa = await search(searchText)
+
+    if (pesquisa.stat === "fail") {
+      console.log("pesquisa falhou")
+    } else {
+      console.log(pesquisa)
+    }
+  }
+
   return (
     <div className="App">
-      <SearchNavbar />
+      <SearchNavbar handleSubmit={runSearch} />
     </div>
   );
 }
