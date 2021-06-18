@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { IFlickrResponse } from '../interfaces/IFlickrResponse'
 
-const getRecent = async () : Promise<any> => {
+const getRecent = async () : Promise<IFlickrResponse> => {
   const options = {
     params: {
       api_key: '6e31907a124b1f213987edd662bca758',
@@ -16,7 +17,7 @@ const getRecent = async () : Promise<any> => {
   return response.data
 }
 
-const search = async (text : string) : Promise<any> => {
+const search = async (text : string) : Promise<IFlickrResponse> => {
   const options = {
     params: {
       api_key: '6e31907a124b1f213987edd662bca758',
