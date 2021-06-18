@@ -6,6 +6,7 @@ const getRecent = async () : Promise<IFlickrResponse> => {
     params: {
       api_key: '6e31907a124b1f213987edd662bca758',
       method: 'flickr.photos.getRecent',
+      safe_search: 1,
       format: 'json',
       per_page: 20,
       page: 1,
@@ -22,6 +23,7 @@ const search = async (text : string) : Promise<IFlickrResponse> => {
     params: {
       api_key: '6e31907a124b1f213987edd662bca758',
       method: 'flickr.photos.search',
+      safe_search: 1,
       format: 'json',
       per_page: 20,
       page: 1,
