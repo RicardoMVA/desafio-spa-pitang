@@ -1,15 +1,18 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SearchNavbar from '../components/SearchNavbar';
+import GridFotos from '../components/GridFotos';
 import { getRecent, search } from "../services/flickrApi"
 import { IFlickrResponse } from '../interfaces/IFlickrResponse'
 import { IFlickrPhoto } from '../interfaces/IFlickrPhoto'
 
 const Main : React.FC = () => {
+  const [listaFotos, setListaFotos] = useState<IFlickrPhoto[]>()
+
   useEffect(() => {
     (async () => {
       const respRecentes: IFlickrResponse = await getRecent()
       const listaRecentes: Array<IFlickrPhoto> = respRecentes.photos.photo
-      console.log(listaRecentes)
+      return setListaFotos(listaRecentes)
     })()    
   }, []);
 
@@ -20,12 +23,15 @@ const Main : React.FC = () => {
       console.log("pesquisa falhou")
     } else {
       const resultadoPesquisa: Array<IFlickrPhoto> = pesquisa.photos.photo
-      console.log(resultadoPesquisa)
+      return setListaFotos(resultadoPesquisa)
     }
   }
 
   return (
-    <SearchNavbar handleSubmit={runSearch} />
+    <div className="Main">
+      <SearchNavbar handleSubmit={runSearch} />
+      <GridFotos fotos={listaFotos} />
+    </div>
   );
 }
 
