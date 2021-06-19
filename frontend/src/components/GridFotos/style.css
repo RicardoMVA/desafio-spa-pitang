@@ -10,7 +10,6 @@
 .grid-fotos-card {
   width: 14rem;
   padding: 0.75rem 0.75rem 0rem 0.75rem;
-  border-radius: 4px;
 }
 
 .grid-fotos-card-img {
@@ -19,13 +18,13 @@
 }
 
 .grid-fotos-card-body {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem !important;
 }
 
 .grid-fotos-card-title {
-  height: 1.75rem;
+  height: 2rem;
   overflow: hidden;
   text-overflow: clip;
-  font-size: 0.75rem;
-  font-weight: bold;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
 }
