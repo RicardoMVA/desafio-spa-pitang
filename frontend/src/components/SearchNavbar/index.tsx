@@ -26,7 +26,7 @@ const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
       <Navbar expand="lg" variant="dark" bg="dark" fixed="top">
         <Container>
           <Navbar.Brand href="https://www.flickr.com/" className="search-navbar-brand">
-            <img src="/favicon.ico" className="search-navbar-brand-img"/>
+            <img src="/favicon.ico" className="search-navbar-brand-img" alt="logo do flickr"/>
             flickr
           </Navbar.Brand>
           <Form className="search-form" onSubmit={handleSubmit}>
@@ -36,7 +36,7 @@ const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
                 variant="secondary"
                 className="search-button"
               >
-                <img src="/loupe.png" className="search-img"/>
+                <img src="/loupe.png" className="search-img" alt="lupa de pesquisa"/>
               </Button>
               <FormControl
                 placeholder="Pesquisar fotos"
