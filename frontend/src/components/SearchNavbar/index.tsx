@@ -18,6 +18,8 @@ const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
+    document.documentElement.scrollTop = 0
+
     props.handleSubmit(searchText)
   }
 
