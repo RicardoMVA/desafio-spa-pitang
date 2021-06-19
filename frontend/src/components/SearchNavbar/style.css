@@ -15,8 +15,8 @@
 
 .search-button {
   border-radius: 0px !important;
-  background-color: #d2d2d3;
-  border: 1px solid #d2d2d3;
+  background-color: #d2d2d3 !important;
+  border: 1px solid #d2d2d3 !important;
 }
 
 .search-img {
@@ -25,6 +25,6 @@
 
 .search-form-control {
   border-radius: 0px !important;
-  background-color: #d2d2d3;
-  border: 1px solid #d2d2d3;
+  background-color: #d2d2d3 !important;
+  border: 1px solid #d2d2d3 !important;
 }
