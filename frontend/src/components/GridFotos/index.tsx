@@ -10,8 +10,8 @@ const GridFotos : React.FC<any> = (props: {fotos: IFlickrPhoto[]}) => {
     <div className="grid-fotos">
       <Container fluid="lg">
         <Row>
-          {props.fotos && props.fotos.map((foto: IFlickrPhoto) => (
-            <Col key={foto.id} className="grid-fotos-col">              
+          {props.fotos && props.fotos.map((foto: IFlickrPhoto, index: number) => (
+            <Col key={(foto.id + index)} className="grid-fotos-col">              
               <Card className="mx-auto grid-fotos-card">
                 <Card.Img 
                   variant="top"
