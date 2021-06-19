@@ -20,7 +20,10 @@ const Main : React.FC = () => {
     const pesquisa: IFlickrResponse = await search(searchText)
 
     if (pesquisa.stat === "fail") {
-      console.log("pesquisa falhou")
+      const respRecentes: IFlickrResponse = await getRecent()
+      const listaRecentes: Array<IFlickrPhoto> = respRecentes.photos.photo
+      return setListaFotos(listaRecentes)
+      
     } else {
       const resultadoPesquisa: Array<IFlickrPhoto> = pesquisa.photos.photo
       return setListaFotos(resultadoPesquisa)
