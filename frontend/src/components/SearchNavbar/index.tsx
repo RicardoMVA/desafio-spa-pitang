@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup"
+import "./style.css";
 
 const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
   const [searchText, setSearchText] = useState("");
@@ -21,18 +22,28 @@ const SearchNavbar : React.FC<any> = (props: {handleSubmit: Function}) => {
   }
 
   return (
-    <div className="SearchNavbar">
+    <div className="search-navbar">
       <Navbar expand="lg" variant="dark" bg="dark" fixed="top">
         <Container>
-          <Navbar.Brand href="#">Flickr</Navbar.Brand>
-          <Form className="d-flex" onSubmit={handleSubmit}>
-            <InputGroup>
+          <Navbar.Brand href="https://www.flickr.com/" className="search-navbar-brand">
+            <img src="/favicon.ico" className="search-navbar-brand-img"/>
+            flickr
+          </Navbar.Brand>
+          <Form className="search-form" onSubmit={handleSubmit}>
+            <InputGroup size="sm">
+              <Button 
+                type="submit" 
+                variant="secondary"
+                className="search-button"
+              >
+                <img src="/loupe.png" className="search-img"/>
+              </Button>
               <FormControl
                 placeholder="Pesquisar fotos"
                 aria-label="Pesquisar"
+                className="search-form-control"
                 onChange={handleChangeSearch}
               />
-              <Button type="submit" variant="secondary">Pesquisar</Button>
             </InputGroup>
           </Form>
         </Container>

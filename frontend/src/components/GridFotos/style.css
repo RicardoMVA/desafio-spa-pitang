@@ -1,0 +1,31 @@
+.grid-fotos {
+  padding-top: 5rem;
+  background-color: #f3f5f6;
+}
+
+.grid-fotos-col {
+  margin: 0.5rem 0;
+}
+
+.grid-fotos-card {
+  width: 14rem;
+  padding: 0.75rem 0.75rem 0rem 0.75rem;
+  border-radius: 4px;
+}
+
+.grid-fotos-card-img {
+  height: 8rem;
+  object-fit: cover;
+}
+
+.grid-fotos-card-body {
+  padding-bottom: 0.5rem;
+}
+
+.grid-fotos-card-title {
+  height: 1.75rem;
+  overflow: hidden;
+  text-overflow: clip;
+  font-size: 0.75rem;
+  font-weight: bold;
+}

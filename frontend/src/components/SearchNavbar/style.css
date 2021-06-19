@@ -1,0 +1,30 @@
+.search-navbar-brand {
+  font-weight: bold; 
+  font-size: x-large; 
+  padding: 0px;
+}
+
+.search-navbar-brand-img {
+  max-width: 20px;
+  margin-right: 5px;
+}
+
+.search-form {
+  width: 230px;
+}
+
+.search-button {
+  border-radius: 0px !important;
+  background-color: #d2d2d3;
+  border: 1px solid #d2d2d3;
+}
+
+.search-img {
+  max-width: 20px;
+}
+
+.search-form-control {
+  border-radius: 0px !important;
+  background-color: #d2d2d3;
+  border: 1px solid #d2d2d3;
+}

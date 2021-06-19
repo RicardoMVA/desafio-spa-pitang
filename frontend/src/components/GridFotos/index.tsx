@@ -3,23 +3,22 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { IFlickrPhoto } from '../../interfaces/IFlickrPhoto'
+import "./style.css";
 
 const GridFotos : React.FC<any> = (props: {fotos: IFlickrPhoto[]}) => {
   return (
-    <div className="GridFotos" style={{ marginTop: '5rem' }}>
+    <div className="grid-fotos">
       <Container fluid="lg">
         <Row>
           {props.fotos && props.fotos.map((foto: IFlickrPhoto) => (
-            <Col style={{margin: '1rem 0'}}>              
-              <Card key={foto.id} className="mx-auto" style={{ width: '18rem' }}>
+            <Col className="grid-fotos-col">              
+              <Card key={foto.id} className="mx-auto grid-fotos-card">
                 <Card.Img 
                   variant="top"
-                  style={{ height: '18rem', objectFit: 'cover' }}
+                  className="grid-fotos-card-img"
                   src={`https://live.staticflickr.com/${foto.server}/${foto.id}_${foto.secret}_n.jpg`} />
-                <Card.Body>
-                  <Card.Title
-                    style={{ height: '3rem', overflow: 'hidden', textOverflow: 'clip' }}
-                  >
+                <Card.Body className="grid-fotos-card-body">
+                  <Card.Title className="grid-fotos-card-title">
                     {foto.title ? foto.title : "Sem título"}
                   </Card.Title>
                 </Card.Body>
