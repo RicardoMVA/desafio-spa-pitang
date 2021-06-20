@@ -22,6 +22,7 @@ const ModalFoto : React.FC<any> = (props: {foto: IFlickrPhoto, show: boolean, on
       <Modal.Body>
         <img 
           src={`https://live.staticflickr.com/${props.foto && props.foto.server}/${props.foto && props.foto.id}_${props.foto && props.foto.secret}_b.jpg`}
+          alt={props.foto && props.foto.title ? props.foto.title : "Sem título"}
           className="modal-foto-body"
         />
       </Modal.Body>
