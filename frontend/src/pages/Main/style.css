@@ -1,8 +1,21 @@
-.main {
+body {
   background-color: #f3f5f6;
 }
 
 .main-container-descricao {
   padding-top: 5rem;
   padding-bottom: 1rem;
+}
+
+.main-background-img {
+  filter: opacity(10%);
+  -webkit-filter: opacity(10%);
+  width: 100%;
+  margin-top: 10vh;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+.main-descricao {
+  text-align: center;
 }
