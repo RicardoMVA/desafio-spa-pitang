@@ -18,13 +18,13 @@ const Main : React.FC = () => {
 
   const runSearch = async (searchText: string) => {
     setLoading(true)
+    setListaFotos([])
     setSearchedText(searchText)
     setPage(1)
     const pesquisa: IFlickrResponse = await search(searchText, 1)
 
     if (pesquisa.stat === "fail" || pesquisa.photos.photo.length < 1) {
-      setListaFotos([])
-      setDescricaoResultado("Nenhum resultado. Por favor, tente outro termo.") 
+      setDescricaoResultado("Nenhum resultado. Por favor, pesquise outro termo.") 
     } else {
       const resultadoPesquisa: Array<IFlickrPhoto> = pesquisa.photos.photo
       setListaFotos(resultadoPesquisa)
