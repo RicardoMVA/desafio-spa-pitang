@@ -5,6 +5,7 @@
 .grid-fotos-card {
   width: 14rem;
   padding: 0.75rem 0.75rem 0rem 0.75rem;
+  cursor: pointer;
 }
 
 .grid-fotos-card-img {
