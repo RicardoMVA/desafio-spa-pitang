@@ -6,6 +6,12 @@
   width: 14rem;
   padding: 0.75rem 0.75rem 0rem 0.75rem;
   cursor: pointer;
+  box-shadow: 0px 0px 5px #b7b7b7;
+}
+
+.grid-fotos-card:hover {
+  box-shadow: 0px 0px 5px #beedff;
+  border: 1px solid white;
 }
 
 .grid-fotos-card-img {
