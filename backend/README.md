@@ -9,6 +9,10 @@ Would be equivalent to calling the following URL:
 https://api.flickr.com/services/rest/?api_key={your_api_key}&method=flickr.photos.getRecent&format=json&user_id=193328962@N08&per_page=20&page=1&nojsoncallback=1&safe_search=1
 
 
+## .env file
+Should have a valid API key provided by flickr and exist as .env
+
+
 ## Available functionality
 
 In the project directory, you can run:
