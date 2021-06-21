@@ -8,30 +8,6 @@ import ModalFoto from './components/GridFotos/ModalFoto';
 
 import { IFlickrPhoto } from './interfaces/IFlickrPhoto'
 
-test('página Main carrega em branco', () => {
-  render(<App />);
-  const descricaoInicial = screen.getByText(/Pesquise algo para começar/i);
-  const imagemLupa = screen.getByAltText('lupa sobre imagem')
-  expect(descricaoInicial).toBeInTheDocument();
-  expect(imagemLupa).toHaveAttribute('src', './search-image.png')
-});
-
-test('search navbar executa função passando valor digitado', async () => {
-  let result;
-
-  function runSearch(searchText: string) {
-    result = searchText;
-  }
-
-  render(<SearchNavbar handleSubmit={runSearch} />);
-  const inputField = screen.getByRole('textbox');
-  const submitBtn = screen.getByRole('button');
-  fireEvent.change(inputField, { 'target': { 'value': 'forest' } });
-  fireEvent.click(submitBtn);
-  
-  expect(result).toBe('forest')
-});
-
 const fotos : IFlickrPhoto[] = [
   {
     farm: 66,
@@ -67,6 +43,40 @@ const fotos : IFlickrPhoto[] = [
     title: "20210606 - Cabin in the Clouds"
   },
 ]
+
+test('página Main carrega navbar search', () => {
+  render(<App />);
+  const inputField = screen.getByRole('textbox');
+  expect(inputField).toBeInTheDocument();
+});
+
+test('página Main carrega texto de início', () => {
+  render(<App />);
+  const descricaoInicial = screen.getByText(/Pesquise algo para começar/i);
+  expect(descricaoInicial).toBeInTheDocument();
+});
+
+test('página Main carrega imagem de fundo', () => {
+  render(<App />);
+  const imagemLupa = screen.getByAltText('lupa sobre imagem')
+  expect(imagemLupa).toHaveAttribute('src', './search-image.png')
+});
+
+test('search navbar executa função passando valor digitado', async () => {
+  let result;
+
+  function runSearch(searchText: string) {
+    result = searchText;
+  }
+
+  render(<SearchNavbar handleSubmit={runSearch} />);
+  const inputField = screen.getByRole('textbox');
+  const submitBtn = screen.getByRole('button');
+  fireEvent.change(inputField, { 'target': { 'value': 'forest' } });
+  fireEvent.click(submitBtn);
+  
+  expect(result).toBe('forest')
+});
 
 test('grid fotos exibe cards com fotos usando dados', async () => {
   render(<GridFotos fotos={fotos} />);
