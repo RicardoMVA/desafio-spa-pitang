@@ -11,8 +11,8 @@ html, body, .main {
   filter: opacity(10%);
   -webkit-filter: opacity(10%);
   width: 100%;
-  margin-top: 10vh;
-  max-height: 50vh;
+  margin-top: 5rem;
+  max-height: 25rem;
   object-fit: contain;
 }
 
@@ -22,7 +22,7 @@ html, body, .main {
 
 .main-container-spinner {
   background-color: #f3f5f6;
-  margin-top: 45vh;
+  margin-top: 20rem;
 }
 
 .main-spinner {
